@@ -1,0 +1,5 @@
+blazepod/
+scripts/
+^README.md
+*/node_modules/
+*/dist/
