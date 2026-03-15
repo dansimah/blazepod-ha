@@ -185,7 +185,7 @@ app.post("/api/history", (req, res) => {
 if (isProduction) {
   const distPath = join(__dirname, "..", "dist");
   app.use(express.static(distPath));
-  app.get("*", (req, res, next) => {
+  app.get("/{*splat}", (req, res, next) => {
     if (req.path.startsWith("/api")) return next();
     res.sendFile(join(distPath, "index.html"));
   });
